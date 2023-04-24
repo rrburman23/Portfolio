@@ -11,10 +11,9 @@ $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
  $sql = "SELECT * FROM accounts WHERE uname = '$uname' AND pwd = '$pwd'";
  $result = mysqli_query($conn, $sql);
- $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
- $active = $row['active'];
+
  $count = mysqli_num_rows($result);
- 
+
  //echo $count;  
 
  if ($count == 0 || !(password_verify($pwd,$hashPwd))){
