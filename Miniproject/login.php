@@ -18,8 +18,8 @@ $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
  //echo $count;  
 
  if ($count == 0 || !(password_verify($pwd,$hashPwd))){
-   //echo "Details inccorect. Please try again";
-   alert("Details inccorect. Please try again");
+   echo "Details inccorect. Please try again";
+   header("location: viewBlog.php");
  }
  else{
    session_start();
