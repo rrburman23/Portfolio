@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+  </head>
+
+  <body>
+    <h1>Login</h1>
+    <form method= "post" action = "login.php">
+        <!--Headings for form-->
+        <div class = "headingContainer">
+            <h3><b>Sign in</b></h3><br>
+            <p>Sign in with your username and password</p>
+        </div>
+
+        <!--Container for inputs-->
+        <div class = "mainContainer">
+
+            <!--Username-->
+            <label for="username"><b>Your username</b></label>
+            <input type = "text" placeholder="Username" name ="username" required>
+            <br><br>
+
+            <!--Password-->
+            <label for="pswrd"><b>Your password</b></label>
+            <input type="password" placeholder="Enter Password" name="pswrd" required>
+            <br><br>
+
+            <!--forgot password and rember me subcontainer-->
+            <div class="subcontainer">
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <br>
+                <p class="forgotpsd"> <a href="#">Forgot Password?</a></p>
+            </div>
+
+            <br>
+
+            <!--Submit button-->
+             <button type="submit">Login</button>
+        </div>
+    </form>
+   
+  </body>
+</html>

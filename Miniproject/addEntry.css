@@ -1,0 +1,81 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+html {
+    font-family: Noto Sans, sans-serif;
+}
+
+body {
+    background: #155799;
+    color: whitesmoke;
+    
+}
+
+h1{
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+    font-weight: bolder;
+}
+
+form {
+    width: 100rem;
+    margin: auto;
+    color: whitesmoke;
+    background-color: rgba(11, 15, 13, 0.5);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.mainContainer {
+    padding: 0rem;
+}
+
+button {
+    background-color: #5c5c5c;
+    color: white;
+    padding: 0.5em;
+    border-radius: 1em;
+    margin: 0.5em 0;
+    width: 47.5%;
+    font-size: large;
+    text-align: center;
+    justify-self: center;
+}
+
+button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+    background-color: black;
+}
+
+input{
+    width: 100%;
+    margin: 0.75em 0;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: Noto Sans, sans-serif;
+    font-size: larger;
+}
+
+input[type=text]:focus{
+    border:solid black;
+}
+
+textarea{
+    resize: none;
+    font-family: Noto Sans, sans-serif;
+    font-size: large;
+    padding: 1rem;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+
