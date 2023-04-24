@@ -1,33 +1,41 @@
 <?php
- include("config.php");
- session_start();
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+   header("location: viewBlog.php");
+   exit;
+}
+ require_once "config.php";
 
- $uname = $_POST["username"];
- $pwd = $_POST['pswrd'];
+ $uname="";
+ $pwd="";
 
- //prevent from mysqli injection
-$uname = stripcslashes($uname);
-$pwd = stripcslashes($pwd);  
-$uname = mysqli_real_escape_string($conn, $uname);  
-$pwd = mysqli_real_escape_string($conn, $pwd);  
+$stmt = $conn -> prepare("SELECT * FROM accounts WHERE uname = ? AND pwd = ?");
+$stmt->bind_param("ss", $uname,$pwd);
 
- $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
+$uname = mysqli_real_escape_string($conn, $_POST["username"]);  
+$pwd = mysqli_real_escape_string($conn, $_POST['pswrd']);  
+$hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
+$stmt->exectue();
 
 
- $sql = "SELECT * FROM accounts WHERE uname ='$uname' AND pwd = '$pwd'";
+ $sql = "SELECT * FROM accounts WHERE uname = '$uname' AND pwd = '$pwd'";
  $result = mysqli_query($conn, $sql);
- $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+ $active = $row['active'];
  $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $uname;
-         
-         header("location: viewBlog.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
 
+ 
+ echo $count;  
+
+ if ($count == 0 && !(password_verify($pwd,$hashPwd))){
+   echo "Details inccorect. Please try again";
+ }
+ else{
+   session_start();
+   $_SESSION['loggedin'] = true;
+   $_SESSION['senduname']=$uname;
+   header("location: viewBlog.php");
+ }
+
+      
+     
 ?>
