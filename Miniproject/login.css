@@ -1,0 +1,94 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+html {
+    font-family: Noto Sans, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #155799, #159957);
+    color: whitesmoke;
+    padding: 2%;
+    margin: 2%;
+}
+
+h1 {
+    text-align: center;
+    padding: auto;
+    padding-bottom: 1em;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+form {
+    width: 35rem;
+    margin: auto;
+    color: whitesmoke;
+    background-color: rgba(11, 15, 13, 0.5);
+    border-radius: 1em;
+
+}
+
+.headingContainer {
+    text-align: center;
+    padding: 0.5em;
+    margin: auto;
+}
+
+.headingContainer h3{
+    font-weight: bold;
+}
+
+
+.mainContainer {
+    padding: 1rem;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    margin: 0.75em 0;
+    border-radius: 2.5%;
+    padding: 1em;
+    box-sizing: border-box;
+    resize: none;
+}
+
+button {
+    background-color: #5c5c5c;
+    color: white;
+    padding: 0.5em;
+    border-radius: 1em;
+    margin: 0.5em 0;
+    width: 100%;
+    font-size: large;
+    text-align: center;
+    justify-self: center;
+}
+
+button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+    background-color: black;
+}
+
+.subcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.subcontainer a{
+    font-size: large;
+    margin-bottom: 1.5em;
+}
+
+.forgotpsd a{
+    color: rgb(74, 146, 235);
+}
+
+.forgotpsd a:link{
+    text-decoration: none;
+  }
