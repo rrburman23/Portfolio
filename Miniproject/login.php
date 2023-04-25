@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
    header("location: viewBlog.php");
    exit;
 }
@@ -13,10 +13,11 @@ $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
  $result = mysqli_query($conn, $sql);
 
  $count = mysqli_num_rows($result);
+ $row = mysqli_fetch_assoc($result);
 
  //echo $count;  
 
- if ($count >=1 || !(password_verify($pwd,$hashPwd))){
+ if ($count >=1){
    echo "Details inccorect. Please try again";
    header("location: viewBlog.php");
  }

@@ -35,7 +35,7 @@ if(!isset($_SESSION['senduname'])|| $_SESSION['loggedin']!=true){
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="viewBlog.php">Blog</a></li>
                        <li> <?php
-                        if($_SESSION['loggedin']==true){
+                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
                             echo '<a href="writePost.php">Write a Post</a></li>';
                             echo '<li><a href="logout.php">Log Out</a></li>';
                         }
