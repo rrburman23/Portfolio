@@ -21,16 +21,16 @@
             <div class="nav">
                 <nav>
                     <ul>
-                        <li><a href="homepage.html">Home</a></li>
-                        <li><a href="skills.html">Skills & Achievements</a></li>
-                        <li><a href="education.html">Education & Qualifications</a></li>
-                        <li><a href="experience.html">Experience</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="homepage.php">Home</a></li>
+                        <li><a href="skills.php">Skills & Achievements</a></li>
+                        <li><a href="education.php">Education & Qualifications</a></li>
+                        <li><a href="experience.php">Experience</a></li>
+                        <li><a href="portfolio.php">Portfolio</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="viewBlog.php">Blog</a></li>
                        <li> <?php
                         if($_SESSION['loggedin']==true){
-                            echo '<a href="logout.php>Log Out</a>';
+                            echo '<a href="logout.php">Log Out</a>';
                         }
                         elseif($_SESSION['loggedin']==false){
                             echo '<a href="login.html">Login</a>';
@@ -41,7 +41,7 @@
         </header>             
         
         <div class="container">
-  <form method="post" action="contact.php">
+  <form method="post" action="contactMe.php">
     <h3> Write a message or <a href = "mailto: r.r.burman@se22.qmul.ac.uk">send me an email</a> or connect we me on <a href="https://uk.linkedin.com/in/rohan-burman-051394258?trk=people-guest_people_search-card>">LinkedIn</a></h3>
     
     <br>

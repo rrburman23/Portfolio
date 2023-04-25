@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="navbar.css">
     <title>Homepage</title>
 </head>
 
@@ -29,18 +29,18 @@
                         <li><a href="viewBlog.php">Blog</a></li>
                        <li> <?php
                         if($_SESSION['loggedin']==true){
-                            echo '<a href="logout.php>Log Out</a>';
+                            echo '<a href="logout.php">Log Out</a>';
                         }
                         elseif($_SESSION['loggedin']==false){
                             echo '<a href="login.html">Login</a>';
                         }
                         ?></li>
-
                     </ul>
                 </nav>
             </div>
         </header>
-    </div>
+    </div><br>
+                    </div>
 
     <div class="wrapper">
         <div class="img">

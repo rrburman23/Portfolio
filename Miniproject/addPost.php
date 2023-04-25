@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $sql);
     echo("Title invalid");
  }
  else{
-   $sql1="INSERT INTO blog (title,description,author,date_created,content) VALUES ($title,$description,$author,$date,$content)";
+   $sql1="INSERT INTO blog (title,description,author,date_created,content) VALUES ('$title','$description','$author','$date','$content')";
    mysqli_query($conn,$sql1) or trigger_error("Query Failed! SQL: $sql1 - Error: ".mysqli_error($conn), E_USER_ERROR);
    //if(mysqli_query($conn,$sql1)){
       echo "New record created successfully";

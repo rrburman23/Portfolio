@@ -3,7 +3,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
    header("location: viewBlog.php");
    exit;
 }
- require_once "config.php";
+ require "config.php";
 
 $uname = mysqli_real_escape_string($conn, $_POST["username"]);  
 $pwd = mysqli_real_escape_string($conn, $_POST['pswrd']);  

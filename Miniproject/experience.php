@@ -30,7 +30,7 @@
                         <li><a href="viewBlog.php">Blog</a></li>
                        <li> <?php
                         if($_SESSION['loggedin']==true){
-                            echo '<a href="logout.php>Log Out</a>';
+                            echo '<a href="logout.php">Log Out</a>';
                         }
                         elseif($_SESSION['loggedin']==false){
                             echo '<a href="login.html">Login</a>';
