@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -7,10 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="contact.css">
-    <title>Contact</title>
+    <link rel="stylesheet" href="writePost.css">
+    <title>Add a Post</title>
 </head>
-
 <body>
     <div class="navbar">
         <header>
@@ -26,7 +24,7 @@
                         <li><a href="education.html">Education & Qualifications</a></li>
                         <li><a href="experience.html">Experience</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="viewBlog.php">Blog</a></li>
                        <li> <?php
                         if($_SESSION['loggedin']==true){
@@ -35,36 +33,30 @@
                         elseif($_SESSION['loggedin']==false){
                             echo '<a href="login.html">Login</a>';
                         }
-                        ?></li>                  </ul>
+                        ?></li>
+                    </ul>
                 </nav>
             </div>
-        </header>             
-        
-        <div class="container">
-  <form method="post" action="contact.php">
-    <h3> Write a message or <a href = "mailto: r.r.burman@se22.qmul.ac.uk">send me an email</a> or connect we me on <a href="https://uk.linkedin.com/in/rohan-burman-051394258?trk=people-guest_people_search-card>">LinkedIn</a></h3>
-    
-    <br>
-
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name...">
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name...">
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" size="30" placeholder="Your email..." required>
-
-    <label for="msg">Message</label>
-    <textarea id="msg" name="msg" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-
-  </form>
-</div>
+        </header>
     </div>
 
+    
+    <div class="container">
+        <form method="POST" action="addPost.php">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Title..." required>
 
-</body>
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" placeholder="Description...">
+            
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" placeholder="Your name..." required>
 
+            <label for="content">Content</label>
+            <textarea rows=23 id="content" name="content" placeholder="Write here..." required></textarea>
+
+            <input type="submit" value="Add Post">
+       </form>
+    </div>
+    </body>
 </html>

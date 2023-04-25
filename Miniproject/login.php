@@ -9,22 +9,25 @@ $uname = mysqli_real_escape_string($conn, $_POST["username"]);
 $pwd = mysqli_real_escape_string($conn, $_POST['pswrd']);  
 $hashPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
- $sql = "SELECT * FROM accounts WHERE uname = '$uname' AND pwd = '$pwd'";
+ $sql = "SELECT * FROM 'accounts' WHERE 'uname' = '$uname' AND 'pwd' = '$pwd'";
  $result = mysqli_query($conn, $sql);
 
  $count = mysqli_num_rows($result);
 
  //echo $count;  
 
- if ($count == 0 || !(password_verify($pwd,$hashPwd))){
+ if ($count >=1 || !(password_verify($pwd,$hashPwd))){
    echo "Details inccorect. Please try again";
    header("location: viewBlog.php");
  }
- else{
+ else if ($count ==1 && password_verify($pwd,$hashPwd)){
    session_start();
    $_SESSION['loggedin'] = true;
-   $_SESSION['senduname']=$uname;
+   $_SESSION['senduname']= $uname;
    header("location: viewBlog.php");
- }    
+ }
+ else{
+  echo 'unknown error occured <br>Please contact an admin';
+ }
      
 ?>
