@@ -1,6 +1,9 @@
 <?php
 require "config.php";
 session_start();
+
+error_reporting(0);
+error_reporting(E_ERROR | E_PARSE);
 /*if (!isset($_SESSION['senduname']) || $_SESSION['loggedin'] != true) {
 header("location: login.html");
 }*/
@@ -13,7 +16,7 @@ header("location: login.html");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="viewBlog.css">
     <title>Blog</title>
 </head>
 
