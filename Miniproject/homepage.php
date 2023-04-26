@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+session_start();
+print_r($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +35,7 @@
                         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
                             echo '<a href="logout.php">Log Out</a>';
                         }
-                        elseif($_SESSION['loggedin']==false){
+                        else if($_SESSION['loggedin']==false){
                             echo '<a href="login.html">Login</a>';
                         }
                         ?></li>

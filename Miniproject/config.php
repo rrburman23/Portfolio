@@ -15,7 +15,7 @@ else if ($conn->connect_error) {
     die("Failed to connect: " . $conn->connect_error);
   }
 else{
-  echo 'connection successful';
+  echo '<script>console.log("connection successful")</script>';
 }
 
 ?>
