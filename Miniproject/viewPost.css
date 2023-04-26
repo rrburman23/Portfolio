@@ -11,22 +11,21 @@ h5 ul {
   list-style: none;
   display: flex;
   width: 97.5%;
-  justify-content: space-between;
+  justify-content:space-between;
   padding-right: 5%;
+
 }
 
-h2 a:hover {
-  color: #0400e2;
-  font-size: larger;
-  transition: all 0.3s ease 0s;
-}
-
-.blog {
+.post {
   padding: 2.5%;
 }
 
-.blog a:after {
-  color: grey;
+#title{
+    font-size: xx-large;
+}
+
+#details{
+    font-size:medium;
 }
 
 hr {
@@ -35,9 +34,9 @@ hr {
   border: none;
   height: 1px;
   background: #ccc;
-  width: 97.5%;
+  width: 97.6%;
   size: 10px;
-  border-color: orange;
-  background-color: purple;
+  border-color: black;
+  background-color: black;
   align: center;
 }

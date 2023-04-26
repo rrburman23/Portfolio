@@ -1,14 +1,14 @@
-<?php session_start(); ?>
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="viewPost.css">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="writePost.css">
-    <script src="script.js"></script>
-    <title>Add a Post</title>
+    <title>Homepage</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                             <?php
                             if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
                                 echo '<a href="logout.php">Log Out</a>';
-                            } elseif ($_SESSION['loggedin'] == false) {
+                            } else if ($_SESSION['loggedin'] == false) {
                                 echo '<a href="login.html">Login</a>';
                             }
                             ?>
@@ -41,28 +41,21 @@
                 </nav>
             </div>
         </header>
+    </div><br>
     </div>
+    <?php
+    $title=$_GET['title'];
+    $date=$_GET['date'];
+    $author=$_GET['author'];
+    $description=$_GET['description'];
+    $content=$_GET['content'];
 
-
-    <div class="container">
-        <form method="POST" action="addPost.php">
-            <label for="title">Title</label>
-            <input type="text" id="title" class="inputText" name="title" placeholder="Title..." required>
-
-            <label for="description">Description</label>
-            <input type="text" id="description" class="inputText" name="description" placeholder="Description...">
-
-            <label for="author">Author</label>
-            <input type="text" id="author" class="inputText" name="author" placeholder="Your name..." required>
-
-            <label for="content">Content</label>
-            <textarea rows=23 id="content" class="inputText" name="content" placeholder="Write here..."
-                required></textarea>
-
-            <input class="btns" type="submit" value="Submit">
-            <input class="btns" type="button" value="Clear" onclick="clearTxt()">
-        </form>
-    </div>
+    echo '<div class = "post">';
+        echo '<h2 id = "title">'.$title. '</h2>';
+        echo '<h5 id = "details"><ul><li>' . $date . '</li><li>By <strong>' . $author. '</strong></li></ul></h5><br>';
+        echo '<br><p id = "description"><b>' . $description. '</b></p><br><hr><br>';
+        echo '<p id = "content">'.$content.'</p>';
+        echo '</div>';
+	?>
 </body>
-
 </html>

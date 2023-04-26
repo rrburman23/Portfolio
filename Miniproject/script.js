@@ -17,3 +17,10 @@ function pEmpty(){
   }
   return true;
 }
+
+window.addEventListener('beforeunload', function(event) {
+    // send an AJAX request to log out the user
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'logout.php', false);
+    xhr.send();
+});

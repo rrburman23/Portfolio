@@ -50,15 +50,29 @@ header("location: login.html");
         </header>
     </div>
     <?php
-    $titleQuery = "SELECT title, description, author, date_created FROM blog ORDER BY date_created DESC";
+    $titleQuery = "SELECT * FROM blog ORDER BY date_created DESC";
     $titles = mysqli_query($conn, $titleQuery);
+    $c=0;
+    
     while ($row = mysqli_fetch_array($titles, MYSQLI_ASSOC)) {
+        //echo $c.'<br>'.$rowNum;
         $date = date("d/m/Y", strtotime($row["date_created"]));
+        $_SESSION[$c]= array(
+            "title" => $row["title"],
+             "date" => $date,
+             "author" => $row["author"],
+             "description" => $row["description"], 
+             "content" => $row["content"]
+        );
+        //print_r($_SESSION[$rowNum]);
+        $encodedArray=http_build_query($_SESSION[$c]);
+        $query= "viewPost.php?$encodedArray";
         echo '<div class = "blog">';
-        echo '<h2><a href="viewPost.php">' . $row["title"] . '</h2>';
-        echo '<h5><ul><li>' . $date . '</li><li>By <strong>' . $row["author"] . '<strong></li></ul></h5><br>';
+        echo '<h2><a href="'. $query.'">'. $row["title"] . '</h2>';
+        echo '<h5><ul><li>' . $date . '</li><li>By <strong>' . $row["author"] . '</strong></li></ul></h5><br>';
         echo '<p>' . $row["description"] . '</p></a>';
         echo '</div><hr>';
+        $c++;
     }
     ?>
 
