@@ -1,7 +1,9 @@
-.sixthForm, .secondary{
-    padding: 1rem;
+.sixthForm,
+.secondary {
+  padding: 1rem;
 }
 
-.secondary li, .sixthForm li{
-    margin-left: 1rem
+.secondary li,
+.sixthForm li {
+  margin-left: 1rem;
 }

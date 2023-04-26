@@ -27,14 +27,15 @@
                         <li><a href="portfolio.php">Portfolio</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="viewBlog.php">Blog</a></li>
-                       <li> <?php
-                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
-                            echo '<a href="logout.php">Log Out</a>';
-                        }
-                        elseif($_SESSION['loggedin']==false){
-                            echo '<a href="login.html">Login</a>';
-                        }
-                        ?></li>
+                        <li>
+                            <?php
+                            if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+                                echo '<a href="logout.php">Log Out</a>';
+                            } elseif ($_SESSION['loggedin'] == false) {
+                                echo '<a href="login.html">Login</a>';
+                            }
+                            ?>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -43,7 +44,8 @@
 
     <div class="sixthForm">
         <h2>Sixth Form</h2>
-        <p>Before joining Queen Mary University of London, I was a student at Brighton, Hove & Sussex Sixth Form College (BHASVIC). Here I studied: Maths, Further Maths, Computer Science & Phsyics</p><br><br>
+        <p>Before joining Queen Mary University of London, I was a student at Brighton, Hove & Sussex Sixth Form College
+            (BHASVIC). Here I studied: Maths, Further Maths, Computer Science & Phsyics</p><br><br>
         <p>Grades Acheived:</p>
         <ul>
             <li>Maths - A</li>
@@ -52,7 +54,7 @@
             <li>Physics - C</li>
         </ul>
     </div>
-    <br><br>    
+    <br><br>
     <div class="secondary">
         <h2>Secondary School</h2>
         <p>Before joining BHASVIC, I was a student at Warden Park Secondary Academy.</p><br><br>

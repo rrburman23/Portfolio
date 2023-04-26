@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="login.css">
-    <title>Login</title>
-  </head>
 
-  <body>
-    <h1>Login</h1>
-    <form method= "post" action = "login.php">
-        <!--Headings for form-->
-        <div class = "headingContainer">
-            <h3><b>Sign in</b></h3><br>
-            <p>Sign in with your username and password</p>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="login.css">
+  <title>Login</title>
+</head>
 
-        <!--Container for inputs-->
-        <div class = "mainContainer">
+<body>
+  <h1>Login</h1>
+  <form method="post" action="login.php">
+    <!--Headings for form-->
+    <div class="headingContainer">
+      <h3><b>Sign in</b></h3><br>
+      <p>Sign in with your username and password</p>
+    </div>
 
-            <!--Username-->
-            <label for="username"><b>Your username</b></label>
-            <input type = "text" placeholder="Username" name ="username" required>
-            <br><br>
+    <!--Container for inputs-->
+    <div class="mainContainer">
 
-            <!--Password-->
-            <label for="pswrd"><b>Your password</b></label>
-            <input type="password" placeholder="Enter Password" name="pswrd" required>
-            <br><br>
+      <!--Username-->
+      <label for="username"><b>Your username</b></label>
+      <input type="text" placeholder="Username" name="username" required>
+      <br><br>
 
-            <!--forgot password and rember me subcontainer-->
-            <div class="subcontainer">
-                <label>
-                  <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-                <br>
-                <p class="forgotpsd"> <a href="mailto:rohan.burman23@gmail.com subject="Forgot%20Password body=I%20have%20forgotten%my%password.">Forgot Password?</a></p>
-            </div>
+      <!--Password-->
+      <label for="pswrd"><b>Your password</b></label>
+      <input type="password" placeholder="Enter Password" name="pswrd" required>
+      <br><br>
 
-            <br>
+      <!--forgot password and rember me subcontainer-->
+      <div class="subcontainer">
+        <p class="forgotpsd"> <a href="mailto:rohan.burman23@gmail.com subject=" Forgot%20Password
+            body=I%20have%20forgotten%my%password.">Forgot Password?</a></p>
+      </div>
 
-            <!--Submit button-->
-             <button type="submit">Login</button>
-        </div>
-    </form>
-   
-  </body>
+      <br>
+
+      <!--Submit button-->
+      <button type="submit">Login</button>
+    </div>
+  </form>
+
+</body>
+
 </html>

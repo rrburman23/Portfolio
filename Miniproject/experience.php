@@ -28,14 +28,15 @@
                         <li><a href="portfolio.php">Portfolio</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="viewBlog.php">Blog</a></li>
-                       <li> <?php
-                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
-                            echo '<a href="logout.php">Log Out</a>';
-                        }
-                        elseif($_SESSION['loggedin']==false){
-                            echo '<a href="login.html">Login</a>';
-                        }
-                        ?></li>
+                        <li>
+                            <?php
+                            if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+                                echo '<a href="logout.php">Log Out</a>';
+                            } elseif ($_SESSION['loggedin'] == false) {
+                                echo '<a href="login.html">Login</a>';
+                            }
+                            ?>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -47,19 +48,21 @@
         <br>
         <ul>
             <li>L3 Harris Work Experience
-            <ul>
-                <li>CAD & CAM Software</li>
-                <li>Electronic Circuits</li>
-                <li>Hardware Programming</li>
-            </ul></li>
+                <ul>
+                    <li>CAD & CAM Software</li>
+                    <li>Electronic Circuits</li>
+                    <li>Hardware Programming</li>
+                </ul>
+            </li>
             <li>Royal Air Force Air Cadets
                 <ul>
                     <li>Teamwork & leadership</li>
                     <li>Computer Vision</li>
                     <li>Electronic Circuits</li>
-                </ul></li>                
+                </ul>
+            </li>
         </ul>
-        
+
     </div>
 </body>
 

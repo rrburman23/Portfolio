@@ -2,7 +2,7 @@
 require "config.php";
 session_start();
 /*if (!isset($_SESSION['senduname']) || $_SESSION['loggedin'] != true) {
-    header("location: login.html");
+header("location: login.html");
 }*/
 ?>
 
@@ -50,14 +50,16 @@ session_start();
         </header>
     </div>
     <?php
-        $titleQuery = "SELECT title, description, author, date_created FROM blog ORDER BY date_created DESC";
-        $titles = mysqli_query($conn, $titleQuery);
-        while ($row = mysqli_fetch_array($titles, MYSQLI_ASSOC)) {
-            echo '<div class = "blog"><br>';
-            echo '<h2><a href="viewPost.php">'.$row["title"].'</h2>';
-            echo '<h5><ul><li>'.$row["date_created"].'</li><li>By <strong>'.$row["author"].'<strong></li></ul></h5><br>';
-            echo '<p>'.$row["description"].'</p></a>';
-            echo '<hr>'.'</div>';
-        }
+    $titleQuery = "SELECT title, description, author, date_created FROM blog ORDER BY date_created DESC";
+    $titles = mysqli_query($conn, $titleQuery);
+    while ($row = mysqli_fetch_array($titles, MYSQLI_ASSOC)) {
+        $date = date("d/m/Y", strtotime($row["date_created"]));
+        echo '<div class = "blog">';
+        echo '<h2><a href="viewPost.php">' . $row["title"] . '</h2>';
+        echo '<h5><ul><li>' . $date . '</li><li>By <strong>' . $row["author"] . '<strong></li></ul></h5><br>';
+        echo '<p>' . $row["description"] . '</p></a>';
+        echo '</div><hr>';
+    }
     ?>
+
 </html>

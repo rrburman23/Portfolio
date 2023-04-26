@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -31,20 +30,21 @@ print_r($_SESSION);
                         <li><a href="portfolio.php">Portfolio</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="viewBlog.php">Blog</a></li>
-                       <li> <?php
-                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
-                            echo '<a href="logout.php">Log Out</a>';
-                        }
-                        else if($_SESSION['loggedin']==false){
-                            echo '<a href="login.html">Login</a>';
-                        }
-                        ?></li>
+                        <li>
+                            <?php
+                            if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+                                echo '<a href="logout.php">Log Out</a>';
+                            } else if ($_SESSION['loggedin'] == false) {
+                                echo '<a href="login.html">Login</a>';
+                            }
+                            ?>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </header>
     </div><br>
-                    </div>
+    </div>
 
     <div class="wrapper">
         <div class="img">
