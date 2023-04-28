@@ -1,0 +1,48 @@
+a,
+h2,
+h4,
+p,
+ul {
+  color: black;
+  text-decoration: none;
+}
+
+h5 ul {
+  list-style: none;
+  display: flex;
+  width: 97.5%;
+  justify-content: space-between;
+  padding-right: 5%;
+}
+
+h2 a:hover {
+  color: #0400e2;
+  font-size: larger;
+  transition: all 0.3s ease 0s;
+}
+
+.blog {
+  padding: 2.5%;
+}
+
+.blog a:after {
+  color: grey;
+}
+
+hr {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  height: 1px;
+  background: #ccc;
+  width: 97.6%;
+  size: 10px;
+  border-color: black;
+  background-color: black;
+}
+
+.hr-container {
+  width: 100%;
+  text-align: center;
+}

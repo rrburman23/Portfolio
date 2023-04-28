@@ -1,0 +1,120 @@
+.toggle {
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+.item {
+  padding: 10px;
+}
+
+.item.button {
+  padding: 9px 5px;
+}
+
+.item:not(.button) a:hover,
+.item a:hover::after {
+  color: #ccc;
+}
+
+.navbar li a {
+  display: block;
+  padding: 15px 5px;
+}
+
+.navbar li.subitem a {
+  padding: 15px;
+}
+
+.toggle {
+  order: 1;
+  font-size: 20px;
+}
+
+.item.button {
+  order: 2;
+}
+
+.item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.active .item {
+  display: block;
+}
+
+.button.secondary {
+  /* divider between buttons and navbar links */
+  border-bottom: 1px #444 solid;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    overflow: hidden;
+    flex-wrap: nowrap;
+  }
+  .navbar li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .item {
+    padding: 10px;
+  }
+  .item.button {
+    padding: 9px 5px;
+  }
+  .item:not(.button) a:hover,
+  .item a:hover::after {
+    color: #ccc;
+  }
+
+  #nav-title {
+    margin-right: auto;
+    font-size: 1.5em;
+  }
+
+  .nav li {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    display: inline;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    position: relative;
+  }
+
+  nav li a {
+    margin: 0 0 0.7vw;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease 0s;
+  }
+
+  nav a:hover {
+    color: #0400e2;
+    font-size: larger;
+  }
+
+  nav a:active {
+    color: red;
+  }
+
+  header h1 {
+    font-weight: bolder;
+  }
+
+  .name a {
+    color: black;
+    text-decoration: none;
+  }
+}

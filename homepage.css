@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding: 1rem;
+  align-content: space-between;
+  gap: 1em;
+}
+
+.wrapper .about {
+  flex-grow: 2;
+  align-self: start;
+  align-self: flex-start;
+  flex-basis: 75rem;
+}
+
+.wrapper .img {
+  flex-grow: 0.5vw;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  img,
+  figure {
+    max-width: 100%;
+    float: left;
+    margin-right: 20px;
+  }
+}

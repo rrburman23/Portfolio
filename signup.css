@@ -1,0 +1,124 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap");
+
+html {
+  font-family: Noto Sans, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #155799, #159957);
+  color: whitesmoke;
+  padding: 2%;
+  margin: 2%;
+}
+
+h1 {
+  text-align: center;
+  padding: auto;
+  padding-bottom: 1em;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+form {
+  width: 35rem;
+  margin: auto;
+  color: whitesmoke;
+  background-color: rgba(11, 15, 13, 0.5);
+  border-radius: 1em;
+}
+
+.headingContainer {
+  text-align: center;
+  padding: 0.5em;
+  margin: auto;
+}
+
+.headingContainer h3 {
+  font-weight: bold;
+}
+
+.mainContainer {
+  padding: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  margin: 0.75em 0;
+  border-radius: 2.5%;
+  padding: 1em;
+  box-sizing: border-box;
+  resize: none;
+}
+
+button {
+  background-color: #5c5c5c;
+  color: white;
+  padding: 0.5em;
+  border-radius: 1em;
+  margin: 0.5em 0;
+  width: 100%;
+  font-size: large;
+  text-align: center;
+  justify-self: center;
+}
+
+button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+  background-color: black;
+}
+hr {
+  border: 1px solid #5c5c5c;
+  margin-bottom: 25px;
+}
+
+form a {
+  color: dodgerblue;
+}
+
+.login-container {
+  background-color: #5c5c5c;
+  text-align: center;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10004;";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10006;";
+}
